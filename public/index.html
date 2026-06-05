@@ -8,12 +8,12 @@
     <script type="module" src="https://cdn.jsdelivr.net/gh/starfederation/datastar@1.0.0-RC.6/bundles/datastar.js"></script>
 </head>
 <body>
-    <main class="page" data-signals="{total: 0, live: 0, leaving: 0}" data-init="@get('/stream', {openWhenHidden: true})">
+    <main class="page" data-signals='{"total": 0, "live": 0, "leaving": 0, "preset": "warming up"}' data-init="@get('/stream', {openWhenHidden: true})">
         <section class="live-panel" aria-label="Live update animation demo">
             <header class="panel-header">
                 <div>
-                    <p class="eyebrow">Datastar SSE</p>
-                    <h1>Live update box</h1>
+                    <p class="eyebrow">Datastar SSE juice lab</p>
+                    <h1>Spawn preset roulette</h1>
                 </div>
                 <div class="stream-badge" aria-label="Stream status">
                     <span class="pulse"></span>
@@ -40,13 +40,33 @@
                 </div>
             </div>
 
+            <div class="preset-readout" aria-label="Latest preset">
+                <span>latest</span>
+                <strong data-text="$preset">warming up</strong>
+            </div>
+
             <div class="stage">
                 <div id="stream-items" aria-live="polite" aria-atomic="false"></div>
             </div>
 
+            <div class="preset-rack" aria-label="Preset lineup">
+                <span>Cyberpunk</span>
+                <span>Broadside</span>
+                <span>Bulletin</span>
+                <span>Combo</span>
+                <span>Neon</span>
+                <span>Hologram</span>
+                <span>Glitch</span>
+                <span>Blueprint</span>
+                <span>Sticker</span>
+                <span>Toxic</span>
+                <span>Noir</span>
+                <span>OKLab</span>
+            </div>
+
             <footer class="panel-footer">
-                <span>Append, mark leaving, then remove</span>
-                <span>Exit animation: 700 ms</span>
+                <span>Append, morph to leaving, then remove</span>
+                <span>Exit animation: 950 ms</span>
             </footer>
         </section>
     </main>
