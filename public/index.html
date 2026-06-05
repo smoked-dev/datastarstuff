@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Datastar Live Box Demo</title>
+    <link rel="stylesheet" href="/styles.css">
+    <script type="module" src="https://cdn.jsdelivr.net/gh/starfederation/datastar@1.0.0-RC.6/bundles/datastar.js"></script>
+</head>
+<body>
+    <main class="page" data-signals="{total: 0, live: 0, leaving: 0}" data-init="@get('/stream', {openWhenHidden: true})">
+        <section class="live-panel" aria-label="Live update animation demo">
+            <header class="panel-header">
+                <div>
+                    <p class="eyebrow">Datastar SSE</p>
+                    <h1>Live update box</h1>
+                </div>
+                <div class="stream-badge" aria-label="Stream status">
+                    <span class="pulse"></span>
+                    Streaming
+                </div>
+            </header>
+
+            <div class="metrics" aria-label="Stream metrics">
+                <div>
+                    <span data-text="$total">0</span>
+                    <small>spawned</small>
+                </div>
+                <div>
+                    <span data-text="$live">0</span>
+                    <small>live</small>
+                </div>
+                <div>
+                    <span data-text="$leaving">0</span>
+                    <small>exiting</small>
+                </div>
+                <div>
+                    <span>2/s</span>
+                    <small>rate</small>
+                </div>
+            </div>
+
+            <div class="stage">
+                <div id="stream-items" aria-live="polite" aria-atomic="false"></div>
+            </div>
+
+            <footer class="panel-footer">
+                <span>Append, mark leaving, then remove</span>
+                <span>Exit animation: 700 ms</span>
+            </footer>
+        </section>
+    </main>
+</body>
+</html>
